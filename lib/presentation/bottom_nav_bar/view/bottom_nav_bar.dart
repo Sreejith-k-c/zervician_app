@@ -17,12 +17,11 @@ class _BottomNavState extends State<BottomNav> {
   int currentIndex = 0;
 
   List screens = [
-     HomePage(),
-     Notifications(),
-     ShortCut(),
-     Transactions(),
-     Settings()
-
+    HomePage(),
+    Notifications(),
+    ShortCut(),
+    Transactions(),
+    Settings()
   ];
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class _BottomNavState extends State<BottomNav> {
           },
           selectedItemColor: ColorTheme.mainClr,
           unselectedItemColor: ColorTheme.black,
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
@@ -44,33 +43,37 @@ class _BottomNavState extends State<BottomNav> {
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.notification_add,
-                size: 30,
+              icon: Image.asset(
+                'assets/image/notification.png',
+                width: 30,
+                height: 30,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add,
-                size: 30,
+              icon: Image.asset(
+                'assets/image/add_icon.png',
+                width: 50,
+                height: 50,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.transform_outlined,
-                size: 30,
+              icon:Image.asset(
+                'assets/image/Square Transfer Horizontal.png',
+                width: 30,
+                height: 30,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.settings,
-                size: 30,
+              icon: Image.asset(
+                'assets/image/Group 427319535.png',
+                width: 30,
+                height: 30,
               ),
               label: '',
-            ),
+            )
           ]),
     );
   }

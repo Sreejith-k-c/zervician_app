@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zervician_app/presentation/all_customers/view/all_customers.dart';
+import 'package:zervician_app/presentation/oreders/view/orders.dart';
+import 'package:zervician_app/presentation/payments/view/payments.dart';
 import '../../../core/constants/color/color_constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-    final List<String> imageIndex = [
+  final List<String> imageIndex = [
     'assets/image/car1.png',
     'assets/image/car2.png',
     'assets/image/car3.png',
@@ -20,12 +23,12 @@ class _HomePageState extends State<HomePage> {
     'Abcd',
     'Abcd',
   ];
-    final List<String> textIndexTwo = [
+  final List<String> textIndexTwo = [
     'Oil Changing',
     'Oil Changing',
     'Oil Changing',
   ];
-      final List<String> textIndexThree = [
+  final List<String> textIndexThree = [
     'Pending',
     'Yesterday',
     '14-02-24',
@@ -142,10 +145,14 @@ class _HomePageState extends State<HomePage> {
                           )
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllCustomers()));
+                      },
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IconButton(
@@ -165,7 +172,12 @@ class _HomePageState extends State<HomePage> {
                           )
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Payments()));
+                      },
                     ),
                   ),
                   Padding(
@@ -187,7 +199,9 @@ class _HomePageState extends State<HomePage> {
                           )
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Orders()));
+                      },
                     ),
                   ),
                   Padding(
@@ -413,7 +427,6 @@ class _HomePageState extends State<HomePage> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Row(
-                        
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
