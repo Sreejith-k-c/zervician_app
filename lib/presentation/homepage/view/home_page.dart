@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:zervician_app/presentation/all_customers/view/all_customers.dart';
 import 'package:zervician_app/presentation/oreders/view/orders.dart';
 import 'package:zervician_app/presentation/payments/view/payments.dart';
+import 'package:zervician_app/presentation/service_tickets/view/service_tickets.dart';
+import 'package:zervician_app/presentation/your_visit/view/your_visit.dart';
 import '../../../core/constants/color/color_constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -235,152 +239,162 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  decoration: BoxDecoration(
-                    color: ColorTheme.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Service Tickets',
-                        style: TextStyle(
-                            color: ColorTheme.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: LinearProgressIndicator(
-                          borderRadius: BorderRadius.circular(10),
-                          value: 0.5,
-                          color: ColorTheme.mainClr,
-                          backgroundColor: Colors.grey,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceTickets()));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    decoration: BoxDecoration(
+                      color: ColorTheme.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            "85 ",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: ColorTheme.green),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Service Tickets',
+                          style: TextStyle(
+                              color: ColorTheme.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: LinearProgressIndicator(
+                            borderRadius: BorderRadius.circular(10),
+                            value: 0.5,
+                            color: ColorTheme.mainClr,
+                            backgroundColor: Colors.grey,
                           ),
-                          Text("15 ",
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "85 ",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: ColorTheme.orange)),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text("completed ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorTheme.green)),
-                          Text("completed ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorTheme.orange)),
-                        ],
-                      ),
-                      SizedBox(height: 10)
-                    ],
-                  ),
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  decoration: BoxDecoration(
-                    color: ColorTheme.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Your Visits',
-                        style: TextStyle(
-                            color: ColorTheme.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Stack(
-                            alignment: Alignment.center,
-                            children: <Widget>[
-                              CircularProgressIndicator(
-                                value: 0.5,
-                                color: Colors.grey,
-                                backgroundColor: ColorTheme.green,
-                              ),
-                              Text(
-                                '25',
+                                  color: ColorTheme.green),
+                            ),
+                            Text("15 ",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: ColorTheme.green),
-                              ),
-                            ],
-                          ),
-                          Stack(
-                            alignment: Alignment.center,
-                            children: <Widget>[
-                              CircularProgressIndicator(
-                                value: 0.5,
-                                color: Colors.grey,
-                                backgroundColor: ColorTheme.mainClr,
-                              ),
-                              Text('25',
+                                    color: ColorTheme.orange)),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text("completed ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorTheme.green)),
+                            Text("completed ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorTheme.orange)),
+                          ],
+                        ),
+                        SizedBox(height: 10)
+                      ],
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>YourVisit()));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    decoration: BoxDecoration(
+                      color: ColorTheme.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Your Visits',
+                          style: TextStyle(
+                              color: ColorTheme.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Stack(
+                              alignment: Alignment.center,
+                              children: <Widget>[
+                                CircularProgressIndicator(
+                                  value: 0.5,
+                                  color: Colors.grey,
+                                  backgroundColor: ColorTheme.green,
+                                ),
+                                Text(
+                                  '25',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: ColorTheme.orange)),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text("Today ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorTheme.black)),
-                          Text("This week ",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorTheme.black)),
-                        ],
-                      ),
-                      SizedBox(height: 10)
-                    ],
+                                      color: ColorTheme.green),
+                                ),
+                              ],
+                            ),
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                CircularProgressIndicator(
+                                  value: 0.5,
+                                  color: Colors.grey,
+                                  backgroundColor: ColorTheme.mainClr,
+                                ),
+                                Text('25',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: ColorTheme.orange)),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text("Today ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorTheme.black)),
+                            Text("This week ",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: ColorTheme.black)),
+                          ],
+                        ),
+                        SizedBox(height: 10)
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -392,14 +406,20 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Recent Services",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        "Recent Services",
+                        style:
+                            TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    Text(
-                      "Today",
-                      style: TextStyle(fontSize: 20),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        "Today",
+                        style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                      ),
                     )
                   ],
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/add_short_cut/view/add_short_cut.dart';
 import 'package:zervician_app/presentation/notifications/view/notifications.dart';
-import 'package:zervician_app/presentation/settings/view/setting.dart';
+import 'package:zervician_app/presentation/profile/view/profile.dart';
 import 'package:zervician_app/presentation/transactions/view/transactions.dart';
 import '../../../core/constants/color/color_constants.dart';
 import '../../homepage/view/home_page.dart';
@@ -21,7 +21,7 @@ class _BottomNavState extends State<BottomNav> {
     Notifications(),
     ShortCut(),
     Transactions(),
-    Settings()
+    ProfilePage()
   ];
   @override
   Widget build(BuildContext context) {
