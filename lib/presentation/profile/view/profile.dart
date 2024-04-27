@@ -18,7 +18,7 @@ class ProfilePage extends StatelessWidget {
           appBar: AppBar(
             centerTitle: true,
             title: Text(
-              "My Profile",
+              "Profile",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             leading: IconButton(
@@ -26,16 +26,6 @@ class ProfilePage extends StatelessWidget {
               icon: Icon(Icons.chevron_left_rounded,
                   color: ColorTheme.mainClr, size: 30),
             ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.edit,
-                  color: ColorTheme.mainClr,
-                  size: 30,
-                ),
-              )
-            ],
           ),
           body: SingleChildScrollView(
             child: Padding(

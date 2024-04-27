@@ -289,7 +289,6 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                     ],
                   ),
                 ),
-                
               ],
             ),
             Row(
@@ -317,7 +316,6 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                     ],
                   ),
                 ),
-                
               ],
             ),
             Row(
@@ -351,7 +349,35 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                 
               ],
             ),
-            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2 - 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: ColorTheme.mainClr
+                    ),
+                    height: 50,
+                    child: Center(child: Text('Save',style: TextStyle(color: ColorTheme.white),)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2 - 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: ColorTheme.green
+                    ),
+                    height: 50,
+                    child: Center(child: Text('Print',style: TextStyle(color: ColorTheme.white),)),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

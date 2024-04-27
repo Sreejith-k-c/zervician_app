@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zervician_app/presentation/service_ticket/view/service_ticket.dart';
 import 'package:zervician_app/presentation/service_tickets/view/service_tickets_list.dart';
 import '../../../core/constants/color/color_constants.dart';
 
@@ -142,7 +143,11 @@ class _ServiceTicketsState extends State<ServiceTickets> {
               ),
               SizedBox(height: 10),
               Expanded(
-                child: ServiceTicketList(),
+                child: GestureDetector
+                (onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ServiceTicket()));
+                },
+                  child: ServiceTicketList()),
               ),
             ],
           ),

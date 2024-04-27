@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/customer_info/view/customer_info.dart';
-
 import '../../../core/constants/color/color_constants.dart';
 
 class CustomerDetails extends StatefulWidget {

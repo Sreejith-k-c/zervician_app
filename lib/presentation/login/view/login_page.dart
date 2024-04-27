@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/bottom_nav_bar/view/bottom_nav_bar.dart';
+import 'package:zervician_app/presentation/login_with_otp/view/login_with_otp.dart';
 import '../../../core/constants/color/color_constants.dart';
 
 class LoginPage extends StatefulWidget {
@@ -109,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(15.0),
                 child: InkWell(
                   onTap: (){
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginOtp()));
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width*0.8,
