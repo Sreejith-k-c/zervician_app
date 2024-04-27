@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:zervician_app/presentation/add_date/view/add_date.dart';
 import 'package:zervician_app/presentation/add_image/view/add_image.dart';
+import 'package:zervician_app/presentation/add_more_images/view/add_more_images.dart';
 import 'package:zervician_app/presentation/add_parts/view/add_parts.dart';
 import '../../../core/constants/color/color_constants.dart';
 
@@ -391,7 +393,7 @@ class _ServiceTicketState extends State<ServiceTicket> {
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
                       onTap: () {
-                        
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AddDate()));
                       },
                       child: Container(
                           decoration: BoxDecoration(
@@ -520,15 +522,73 @@ class _ServiceTicketState extends State<ServiceTicket> {
                 ),
               ),
             ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height*0.08,
+                      width: MediaQuery.of(context).size.width*0.17,
+                      decoration: BoxDecoration(
+                        color: ColorTheme.grey,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height*0.08,
+                      width: MediaQuery.of(context).size.width*0.17,
+                      decoration: BoxDecoration(
+                        color: ColorTheme.grey,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height*0.08,
+                      width: MediaQuery.of(context).size.width*0.17,
+                      decoration: BoxDecoration(
+                        color: ColorTheme.grey,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height*0.08,
+                      width: MediaQuery.of(context).size.width*0.17,
+                      decoration: BoxDecoration(
+                        color: ColorTheme.grey,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMoreImages()));
+                  }, icon: Icon(Icons.chevron_right_rounded))
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Items Added",
+                    "Recent Updates",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
+                  Text("View More"),
                 ],
               ),
             ),

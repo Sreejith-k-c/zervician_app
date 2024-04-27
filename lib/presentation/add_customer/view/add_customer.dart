@@ -34,7 +34,6 @@ class _AddCustomerState extends State<AddCustomer> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 width: double.infinity,
-                height: 180,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: ColorTheme.lightBlue)),

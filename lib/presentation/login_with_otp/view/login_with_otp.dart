@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:zervician_app/core/constants/color/color_constants.dart';
+import 'package:zervician_app/presentation/verification_otp/view/verification_otp.dart.dart';
+
+import '../../../core/constants/color/color_constants.dart';
 
 class LoginOtp extends StatefulWidget {
   const LoginOtp({super.key});
@@ -9,96 +11,126 @@ class LoginOtp extends StatefulWidget {
 }
 
 class _LoginOtpState extends State<LoginOtp> {
-  List<TextEditingController> controllers =
-      List.generate(4, (index) => TextEditingController());
-
-  @override
-  void dispose() {
-    controllers.forEach((controller) => controller.dispose());
-    super.dispose();
-  }
+  String selectedCountryCode = '+91';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Enter Verification Code',
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Text(
+              "Login With OTP",
               style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: ColorTheme.mainClr),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'We have sent a verification code to your mobile number',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: List.generate(
-                4,
-                (index) => SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.18,
-                  height: MediaQuery.of(context).size.width * 0.2,
-                  child: TextField(
-                    controller: controllers[index],
-                    maxLength: 1,
-                    textAlign: TextAlign.center,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      hintText: "*",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: BorderSide(color: ColorTheme.mainClr),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: BorderSide(color: ColorTheme.mainClr),
-                      ),
-                      counter: Offstage(),
-                    ),
-                    onChanged: (value) {
-                      if (value.length == 1 && index < 3) {
-                        FocusScope.of(context).nextFocus();
-                      }
-                    },
-                  ),
-                ),
+                color: ColorTheme.mainClr,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
-            SizedBox(height: 20),
-            Center(
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text("Enter Mobile Number"),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: Row(
+                children: [
+                  DropdownButton<String>(
+                    value: selectedCountryCode,
+                    onChanged: (String? newValue) {
+                      if (newValue != null) {
+                        setState(() {
+                          selectedCountryCode = newValue;
+                        });
+                      }
+                    },
+                    items: <String>[
+                      '+91',
+                      '+1',
+                      '+44',
+                      '+86',
+                    ].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                  SizedBox(width: 1),
+                  VerticalDivider(
+                    thickness: 1,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: TextFormField(
+                      keyboardType: TextInputType.phone,
+                      decoration: InputDecoration(
+                        hintText: 'Enter your phone number',
+                        contentPadding: EdgeInsets.symmetric(horizontal: 15),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Center(
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VerifyOtp()),
+                );
+              },
               child: Container(
                 width: MediaQuery.of(context).size.width * 0.5,
                 height: 40,
                 decoration: BoxDecoration(
-                    color: ColorTheme.mainClr,
-                    borderRadius: BorderRadius.circular(10)),
+                  color: ColorTheme.mainClr,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 child: Center(
-                    child: Text(
-                  "Confirm",
-                  style: TextStyle(color: ColorTheme.white,
-                  fontWeight: FontWeight.bold),
-                )),
+                  child: Text(
+                    "Get OTP",
+                    style: TextStyle(
+                      color: ColorTheme.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Center(
+            child: Container(
+              child: Text("-OR-",style: TextStyle(color: Colors.grey,fontSize: 18),),
+            )),
+            TextButton(onPressed: (){
+
+            }, child: Text("Loin with Email & Password",style: TextStyle(color: ColorTheme.mainClr),))
+        ],
       ),
     );
   }

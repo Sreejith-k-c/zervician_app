@@ -110,6 +110,35 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(15.0),
                 child: InkWell(
                   onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.6,
+                    height: MediaQuery.of(context).size.height*0.07,
+                    decoration: BoxDecoration(
+                    color: ColorTheme.mainClr,
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: Center(child: Text("Login ",
+                  style: TextStyle(
+                    fontSize: 15
+                  ),)),),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Center(
+            child: Container(
+              child: Text("-OR-",style: TextStyle(color: Colors.grey,fontSize: 18),),
+            )),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: InkWell(
+                  onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginOtp()));
                   },
                   child: Container(
@@ -125,28 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),)),),
                 ),
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width*0.6,
-                    height: MediaQuery.of(context).size.height*0.07,
-                    decoration: BoxDecoration(
-                    color: ColorTheme.mainClr,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Center(child: Text("Login ",
-                  style: TextStyle(
-                    fontSize: 15
-                  ),)),),
-                ),
-              )
+              
             ],
           ),
         ),

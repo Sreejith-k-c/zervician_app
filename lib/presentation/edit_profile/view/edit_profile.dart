@@ -13,19 +13,20 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-            centerTitle: true,
-            title: Text(
-              "Edit Profile",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(Icons.chevron_left_rounded,
-                  color: ColorTheme.mainClr, size: 30),
-            ),
-          ),
+        backgroundColor: Color(0xFF013F6E),
+        centerTitle: true,
+        title: Text(
+          "Edit Profile",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.chevron_left_rounded,
+              color: ColorTheme.mainClr, size: 30),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
@@ -90,7 +91,8 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           child: TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Image.asset("assets/image/Phone Rounded.png"),
+                              prefixIcon:
+                                  Image.asset("assets/image/Phone Rounded.png"),
                               hintText: "8564852265",
                               border: InputBorder.none,
                             ),
@@ -113,7 +115,8 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           child: TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Image.asset("assets/image/Letter.png"),
+                              prefixIcon:
+                                  Image.asset("assets/image/Letter.png"),
                               hintText: "johny@gmail.com",
                               border: InputBorder.none,
                             ),
@@ -136,7 +139,8 @@ class _EditProfileState extends State<EditProfile> {
                           ),
                           child: TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Image.asset("assets/image/Phone Rounded.png"),
+                              prefixIcon:
+                                  Image.asset("assets/image/Phone Rounded.png"),
                               hintText: "Major Field",
                               border: InputBorder.none,
                             ),
@@ -148,9 +152,9 @@ class _EditProfileState extends State<EditProfile> {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            Text("Start Time"),
+                            Text("DOB"),
                             SizedBox(width: 120),
-                            Text("End Time"),
+                            Text("Location"),
                           ],
                         ),
                       ),
@@ -166,7 +170,8 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    prefixIcon: Image.asset("assets/image/Calendar.png"),
+                                    prefixIcon: Image.asset(
+                                        "assets/image/Calendar.png"),
                                     hintText: "State",
                                     border: InputBorder.none,
                                   ),
@@ -184,7 +189,8 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    prefixIcon: Image.asset("assets/image/Map Point.png"),
+                                    prefixIcon: Image.asset(
+                                        "assets/image/Map Point.png"),
                                     hintText: "District",
                                     border: InputBorder.none,
                                   ),
@@ -196,7 +202,11 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text("Working Time",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                        child: Text(
+                          "Working Time",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -220,7 +230,8 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    prefixIcon: Image.asset("assets/image/Alarm Play.png"),
+                                    prefixIcon: Image.asset(
+                                        "assets/image/Alarm Play.png"),
                                     hintText: "State",
                                     border: InputBorder.none,
                                   ),
@@ -238,10 +249,61 @@ class _EditProfileState extends State<EditProfile> {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                    prefixIcon: Image.asset("assets/image/Alarm Pause.png"),
+                                    prefixIcon: Image.asset(
+                                        "assets/image/Alarm Pause.png"),
                                     hintText: "District",
                                     border: InputBorder.none,
                                   ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: ColorTheme.mainClr,
+                                width: 2,
+                              ),
+                              color: ColorTheme.white,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Cancel",
+                                style: TextStyle(
+                                  color: ColorTheme.mainClr,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: ColorTheme.mainClr,
+                                width: 2,
+                              ),
+                              color: ColorTheme.mainClr,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Save",
+                                style: TextStyle(
+                                  color: ColorTheme.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
                                 ),
                               ),
                             ),

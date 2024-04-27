@@ -134,9 +134,132 @@ double height = MediaQuery.of(context).size.height;
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          children: [
+                            Image.asset("assets/image/Phone Rounded.png"),
+                            SizedBox(width: 10),
+                            Text("9854625457",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                          ],
+                        ),
+                        SizedBox(height: 17),
+                        Row(
+                          children: [
+                            Image.asset("assets/image/Letter.png"),
+                            SizedBox(width: 10),
+                            Text("johny@gmail.com",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                          ],
+                        ),
+                        SizedBox(height: 17),
+                        Row(
+                          children: [
+                            Image.asset("assets/image/Phone Rounded.png"),
+                            SizedBox(width: 10),
+                            Text("Major field",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                          ],
+                        ),
+                        SizedBox(height: 17),
+                        Row(
+                          children: [
+                            Image.asset("assets/image/Calendar.png"),
+                            SizedBox(width: 10),
+                            Text("26-06-1995",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                          ],
+                        ),
+                        SizedBox(height: 17),
+                        Row(
+                          children: [
+                            Image.asset("assets/image/Map Point.png"),
+                            SizedBox(width: 10),
+                            Text("Vytila,Ernakulam",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
+                          ],
+                        ),
+                        
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorTheme.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3),
+                    ),
+                                    ],
+                      ),
+                          child: Column(
+                            children: [
+                              Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Working Time",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Text("Start Time"),
+                              SizedBox(width: 120),
+                              Text("End Time"),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey),
+                                  ),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      prefixIcon: Image.asset(
+                                          "assets/image/Alarm Play.png"),
+                                      hintText: "09:00 am",
+                                      border: InputBorder.none,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey),
+                                  ),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      prefixIcon: Image.asset(
+                                          "assets/image/Alarm Pause.png"),
+                                      hintText: "05:00 pm",
+                                      border: InputBorder.none,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                            ],
+                          ),
+                        ),
+                  ),
+                  
                 ],
               ),
             ),
