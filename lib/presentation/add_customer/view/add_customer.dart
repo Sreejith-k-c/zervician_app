@@ -10,6 +10,12 @@ class AddCustomer extends StatefulWidget {
 }
 
 class _AddCustomerState extends State<AddCustomer> {
+  List<String> vehicleType = [
+    "Maruti",
+    "Tata",
+    "Honda",
+    "Hyundai",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +38,117 @@ class _AddCustomerState extends State<AddCustomer> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: ColorTheme.lightBlue)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: ColorTheme.lightBlue),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Image.asset("assets/image/red_car.png"),
+                          SizedBox(height: 10),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Workshop/Showroom Name',
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Type of customer',
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: double.infinity,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.grey),
+                              ),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: ColorTheme.grey)
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text("Choose Type of Vehicles"),
+                                            IconButton(onPressed: (){
+
+                                            }, icon: Icon(Icons.arrow_drop_down))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: GridView.builder(
+                                        gridDelegate:
+                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 3,
+                                          crossAxisSpacing: 4.0,
+                                          mainAxisSpacing: 4.0,
+                                          childAspectRatio: 2.0,
+                                        ),
+                                        itemCount: 4,
+                                        itemBuilder:
+                                            (BuildContext context, int index) {
+                                          return Container(
+                                            decoration: BoxDecoration(
+                                              color: ColorTheme.mainClr,
+                                              borderRadius:
+                                                  BorderRadius.circular(40),
+                                            ),
+                                            child: Center(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    vehicleType[index],
+                                                    style: TextStyle(
+                                                      fontWeight: FontWeight.bold,
+                                                      color: ColorTheme.white,
+                                                    ),
+                                                  ),
+                                                  Image.asset(
+                                                      "assets/image/cross.png"),
+                                                ],
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -328,7 +440,9 @@ class _AddCustomerState extends State<AddCustomer> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image(image: AssetImage("assets/image/add_image.png")),
+                                      Image(
+                                          image: AssetImage(
+                                              "assets/image/add_image.png")),
                                       Text(
                                         "Upload photo",
                                         style: TextStyle(
@@ -373,7 +487,6 @@ class _AddCustomerState extends State<AddCustomer> {
                               ),
                             ),
                           ),
-                          
                         ],
                       ),
                     ),
