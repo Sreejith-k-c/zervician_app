@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zervician_app/presentation/order_details/view/order_details.dart';
 import 'package:zervician_app/presentation/oreders/view/order_list.dart';
 import '../../../core/constants/color/color_constants.dart';
 
@@ -152,7 +153,11 @@ class _OrdersState extends State<Orders> {
               ),
               SizedBox(height: 10),
               Expanded(
-                child: OrderList(),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderDetails()));
+                  },
+                  child: OrderList()),
               ),
             ],
           ),
