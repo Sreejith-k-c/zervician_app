@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/your_visit/view/your_visit_list.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class YourVisit extends StatefulWidget {
   const YourVisit({Key? key});
@@ -13,19 +14,14 @@ class _YourVisitState extends State<YourVisit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Your Visit",
         centerTitle: true,
-        title: Text(
-          "Your Visit",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
         actions: [
           IconButton(
             onPressed: () {},

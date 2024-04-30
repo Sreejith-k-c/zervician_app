@@ -4,6 +4,7 @@ import 'package:zervician_app/presentation/faq/view/faq.dart';
 import 'package:zervician_app/presentation/my_profile/view/my_profile.dart';
 import 'package:zervician_app/presentation/settings/view/setting.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 import '../../help_center/view/help_center.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -15,18 +16,15 @@ class ProfilePage extends StatelessWidget {
     return Stack(
       children: [
         Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text(
-              "Profile",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            leading: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.chevron_left_rounded,
-                  color: ColorTheme.mainClr, size: 30),
-            ),
-          ),
+       appBar: GLAppBar(
+        title: "Profile",
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
+      ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 3),

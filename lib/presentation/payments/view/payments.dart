@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/payment_details/view/payment_details.dart';
 
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class Payments extends StatefulWidget {
   const Payments({Key? key});
@@ -14,29 +15,14 @@ class _PaymentsState extends State<Payments> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+       appBar: GLAppBar(
+        title: "Payments",
         centerTitle: true,
-        title: Text(
-          "Payments",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: ColorTheme.mainClr,
-              size: 30,
-            ),
-          )
-        ],
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: ListView.builder(
         itemCount: 5,

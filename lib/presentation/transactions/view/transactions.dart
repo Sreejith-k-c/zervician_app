@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:zervician_app/core/constants/color/color_constants.dart';
 import 'package:zervician_app/presentation/transactions/view/transaction_listview.dart';
 
+import '../../../global_widget/global_appbar.dart';
+
 class Transactions extends StatefulWidget {
   const Transactions({Key? key});
 
@@ -13,18 +15,15 @@ class _TransactionsState extends State<Transactions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+             appBar: GLAppBar(
+        title: "Transactions",
         centerTitle: true,
-        title: Text(
-          "Transactions",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-        actions: [
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
+              actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(

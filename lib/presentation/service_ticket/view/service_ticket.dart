@@ -4,6 +4,7 @@ import 'package:zervician_app/presentation/add_image/view/add_image.dart';
 import 'package:zervician_app/presentation/add_more_images/view/add_more_images.dart';
 import 'package:zervician_app/presentation/add_parts/view/add_parts.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class ServiceTicket extends StatefulWidget {
   const ServiceTicket({super.key});
@@ -16,19 +17,14 @@ class _ServiceTicketState extends State<ServiceTicket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: GLAppBar(
+        title: "Service Ticket",
         centerTitle: true,
-        title: Text(
-          "Service Ticket",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: SingleChildScrollView(
         child: Column(

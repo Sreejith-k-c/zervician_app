@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:zervician_app/core/constants/color/color_constants.dart';
 import 'package:zervician_app/presentation/lead_details/view/lead_details.dart';
 
+import '../../../global_widget/global_appbar.dart';
+
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
 
@@ -13,18 +15,15 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Notifications",
         centerTitle: true,
-        title: Text(
-          "Notifications",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-        actions: [
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
+               actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(

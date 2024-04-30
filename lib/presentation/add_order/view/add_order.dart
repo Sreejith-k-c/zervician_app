@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class AddOrder extends StatefulWidget {
   const AddOrder({super.key});
@@ -16,19 +17,14 @@ class _AddOrderState extends State<AddOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+       appBar: GLAppBar(
+        title: "Add Order",
         centerTitle: true,
-        title: Text(
-          "Add Order",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: SingleChildScrollView(
         child: Column(

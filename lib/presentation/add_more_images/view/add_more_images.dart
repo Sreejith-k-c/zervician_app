@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class AddMoreImages extends StatefulWidget {
   const AddMoreImages({super.key});
@@ -12,18 +13,14 @@ class _AddMoreImagesState extends State<AddMoreImages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Images",
         centerTitle: true,
-        title: Text(
-          "Images",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded, color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: Column(
         children: [

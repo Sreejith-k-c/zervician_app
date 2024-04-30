@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class FaqPage extends StatefulWidget {
   const FaqPage({super.key});
@@ -23,23 +24,14 @@ class _FaqPageState extends State<FaqPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF013F6E),
+             appBar: GLAppBar(
+        title: "Frequently Asked Questions",
         centerTitle: true,
-        title: Text(
-          "Frequently Asked questions",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: ColorTheme.white,
-          ),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.white, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: SingleChildScrollView(
         child: Container(

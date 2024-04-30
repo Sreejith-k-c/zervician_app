@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/verification_otp/view/verification_otp.dart.dart';
-
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/container_button_main.dart';
+import '../../../global_widget/text_field.dart';
 
 class LoginOtp extends StatefulWidget {
   const LoginOtp({super.key});
@@ -11,7 +12,7 @@ class LoginOtp extends StatefulWidget {
 }
 
 class _LoginOtpState extends State<LoginOtp> {
-  String selectedCountryCode = '+91';
+   TextEditingController phoneController=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,97 +31,25 @@ class _LoginOtpState extends State<LoginOtp> {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 60,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text("Enter Mobile Number"),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Row(
-                children: [
-                  DropdownButton<String>(
-                    value: selectedCountryCode,
-                    onChanged: (String? newValue) {
-                      if (newValue != null) {
-                        setState(() {
-                          selectedCountryCode = newValue;
-                        });
-                      }
-                    },
-                    items: <String>[
-                      '+91',
-                      '+1',
-                      '+44',
-                      '+86',
-                    ].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
+          TextFields(
+                    text: "Enter mobile Number",
+                    textSize: 16,
+                    hintText: "Enter your phone number",
+                    textEditingController: phoneController,
                   ),
-                  SizedBox(width: 1),
-                  VerticalDivider(
-                    thickness: 1,
-                    color: Colors.black,
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: TextFormField(
-                      keyboardType: TextInputType.phone,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your phone number',
-                        contentPadding: EdgeInsets.symmetric(horizontal: 15),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
           SizedBox(
             height: 50,
           ),
-          Center(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VerifyOtp()),
-                );
-              },
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: ColorTheme.mainClr,
-                  borderRadius: BorderRadius.circular(10),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>VerifyOtp()));
+            },
+            child: MainButton(
+                  text: "Get OTP",
+                  textColor: ColorTheme.white,
                 ),
-                child: Center(
-                  child: Text(
-                    "Get OTP",
-                    style: TextStyle(
-                      color: ColorTheme.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
           ),
           SizedBox(height: 20,),
           Center(

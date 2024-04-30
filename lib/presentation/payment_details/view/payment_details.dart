@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class PaymentDetails extends StatefulWidget {
   const PaymentDetails({Key? key});
@@ -12,19 +13,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Order Details",
         centerTitle: true,
-        title: Text(
-          "Payment Details",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -47,12 +43,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                       children: [
                         Text(
                           "LOGO",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         SizedBox(height: 20),
                         Text(
                           "LG Company",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         Text(
                           "Address and  Details",
@@ -73,12 +71,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                         SizedBox(height: 30),
                         Text(
                           "Bill To",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         SizedBox(height: 10),
                         Text(
                           "AH Automobiles",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         Text(
                           "Address and Details",
@@ -105,20 +105,26 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                         SizedBox(height: 10),
                         Text(
                           "INVOICE",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                         Text(
                           "INV -0084",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 15),
                         ),
                         SizedBox(height: 20),
                         Text(
                           "Balance due",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: ColorTheme.mainClr),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: ColorTheme.mainClr),
                         ),
                         Text(
                           "₹2850.00",
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                         SizedBox(height: 130),
                         Row(
@@ -276,14 +282,16 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "Sub Total",
-                          style: TextStyle(fontSize: 18,  color: ColorTheme.black),
+                          style:
+                              TextStyle(fontSize: 18, color: ColorTheme.black),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "1520.00",
-                          style: TextStyle(fontSize: 18,  color: ColorTheme.black),
+                          style:
+                              TextStyle(fontSize: 18, color: ColorTheme.black),
                         ),
                       ),
                     ],
@@ -303,14 +311,16 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           " Total",
-                          style: TextStyle(fontSize: 18,  color: ColorTheme.black),
+                          style:
+                              TextStyle(fontSize: 18, color: ColorTheme.black),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "1520.00",
-                          style: TextStyle(fontSize: 18,  color: ColorTheme.black),
+                          style:
+                              TextStyle(fontSize: 18, color: ColorTheme.black),
                         ),
                       ),
                     ],
@@ -332,21 +342,26 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             " Balance Due",
-                            style: TextStyle(fontSize: 18,  color: ColorTheme.black,fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: ColorTheme.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "2500.00",
-                            style: TextStyle(fontSize: 18,  color: ColorTheme.black,fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: ColorTheme.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                
               ],
             ),
             Row(
@@ -357,11 +372,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                   child: Container(
                     width: MediaQuery.of(context).size.width / 2 - 20,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: ColorTheme.mainClr
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: ColorTheme.mainClr),
                     height: 50,
-                    child: Center(child: Text('Save',style: TextStyle(color: ColorTheme.white),)),
+                    child: Center(
+                        child: Text(
+                      'Save',
+                      style: TextStyle(color: ColorTheme.white),
+                    )),
                   ),
                 ),
                 Padding(
@@ -369,11 +387,14 @@ class _PaymentDetailsState extends State<PaymentDetails> {
                   child: Container(
                     width: MediaQuery.of(context).size.width / 2 - 20,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: ColorTheme.green
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: ColorTheme.green),
                     height: 50,
-                    child: Center(child: Text('Print',style: TextStyle(color: ColorTheme.white),)),
+                    child: Center(
+                        child: Text(
+                      'Print',
+                      style: TextStyle(color: ColorTheme.white),
+                    )),
                   ),
                 ),
               ],

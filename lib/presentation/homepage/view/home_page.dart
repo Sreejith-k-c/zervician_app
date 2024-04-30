@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:zervician_app/presentation/all_customers/view/all_customers.dart';
-import 'package:zervician_app/presentation/oreders/view/orders.dart';
+import 'package:zervician_app/presentation/orders/view/orders.dart';
 import 'package:zervician_app/presentation/payments/view/payments.dart';
 import 'package:zervician_app/presentation/service_tickets/view/service_tickets.dart';
 import 'package:zervician_app/presentation/your_visit/view/your_visit.dart';

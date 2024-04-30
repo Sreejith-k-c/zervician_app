@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/order_details/view/order_details.dart';
-import 'package:zervician_app/presentation/oreders/view/order_list.dart';
+import 'package:zervician_app/presentation/orders/view/order_list.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class Orders extends StatefulWidget {
   const Orders({Key? key});
@@ -14,19 +15,14 @@ class _OrdersState extends State<Orders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Orders",
         centerTitle: true,
-        title: Text(
-          "Orders",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
         actions: [
           IconButton(
             onPressed: () {},
@@ -154,10 +150,13 @@ class _OrdersState extends State<Orders> {
               SizedBox(height: 10),
               Expanded(
                 child: InkWell(
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderDetails()));
-                  },
-                  child: OrderList()),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => OrderDetails()));
+                    },
+                    child: OrderList()),
               ),
             ],
           ),
@@ -166,9 +165,8 @@ class _OrdersState extends State<Orders> {
             right: 0,
             bottom: 10,
             child: Center(
-              child: InkWell(onTap: (){
-
-              },
+              child: InkWell(
+                onTap: () {},
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.95,
                   height: 50,

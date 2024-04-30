@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/service_ticket/view/service_ticket.dart';
 import 'package:zervician_app/presentation/service_tickets/view/service_tickets_list.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class ServiceTickets extends StatefulWidget {
   const ServiceTickets({Key? key});
@@ -14,20 +15,15 @@ class _ServiceTicketsState extends State<ServiceTickets> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Service Tickets",
         centerTitle: true,
-        title: Text(
-          "Service Ticktes",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-        actions: [
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
+              actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(

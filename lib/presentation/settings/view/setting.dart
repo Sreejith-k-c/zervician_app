@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -12,22 +13,14 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+       appBar: GLAppBar(
+        title: "Settings",
         centerTitle: true,
-        title: Text(
-          "Settings",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: ColorTheme.black,
-          ),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

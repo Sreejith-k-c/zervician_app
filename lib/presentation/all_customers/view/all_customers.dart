@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/customer_details/view/customer_details.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class AllCustomers extends StatefulWidget {
   const AllCustomers({Key? key}) : super(key: key);
@@ -13,37 +14,32 @@ class _AllCustomersState extends State<AllCustomers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "All Customers",
         centerTitle: true,
-        title: Text(
-          "All Customers",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
         actions: [
-           Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      'assets/image/filter_blue.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                  ),
-                ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Image.asset(
+                'assets/image/filter_blue.png',
+                width: 40,
+                height: 40,
+              ),
+            ),
+          ),
         ],
       ),
       body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height*0.08,
+            height: MediaQuery.of(context).size.height * 0.08,
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -69,8 +65,11 @@ class _AllCustomersState extends State<AllCustomers> {
               itemCount: 5,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CustomerDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CustomerDetails()));
                   },
                   child: Container(
                     margin: EdgeInsets.all(10),
@@ -98,7 +97,9 @@ class _AllCustomersState extends State<AllCustomers> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

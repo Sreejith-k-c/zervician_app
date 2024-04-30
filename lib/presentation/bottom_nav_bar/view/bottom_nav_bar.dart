@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:zervician_app/presentation/add_customer/view/add_customer.dart';
 import 'package:zervician_app/presentation/add_order/view/add_order.dart';
-import 'package:zervician_app/presentation/add_short_cut/view/add_short_cut.dart';
 import 'package:zervician_app/presentation/notifications/view/notifications.dart';
 import 'package:zervician_app/presentation/profile/view/profile.dart';
 import 'package:zervician_app/presentation/transactions/view/transactions.dart';
@@ -22,7 +21,6 @@ class _BottomNavState extends State<BottomNav> {
   List screens = [
     HomePage(),
     Notifications(),
-    ShortCut(),
     Transactions(),
     ProfilePage()
   ];

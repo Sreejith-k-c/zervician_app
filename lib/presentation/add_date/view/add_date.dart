@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class AddDate extends StatefulWidget {
   const AddDate({Key? key}) : super(key: key);
@@ -17,19 +18,14 @@ class _AddDateState extends State<AddDate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+            appBar: GLAppBar(
+        title: "Add Date",
         centerTitle: true,
-        title: Text(
-          "Add Date",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
       ),
       body: Column(
         children: [

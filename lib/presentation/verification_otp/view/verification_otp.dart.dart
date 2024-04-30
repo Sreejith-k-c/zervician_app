@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zervician_app/core/constants/color/color_constants.dart';
 
+import '../../../global_widget/container_button_main.dart';
+
 class VerifyOtp extends StatefulWidget {
   const VerifyOtp({super.key});
 
@@ -45,7 +47,7 @@ class _VerifyOtpState extends State<VerifyOtp> {
             SizedBox(height: 10),
             Text(
               'We have sent a verification code to your mobile number',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 16,color: ColorTheme.grey),
             ),
             SizedBox(height: 20),
             Row(
@@ -81,22 +83,13 @@ class _VerifyOtpState extends State<VerifyOtp> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 50),
             Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: ColorTheme.mainClr,
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(
-                    child: Text(
-                  "Confirm",
-                  style: TextStyle(color: ColorTheme.white,
-                  fontWeight: FontWeight.bold),
-                )),
-              ),
-            )
+              child: MainButton(
+                  text: "Confirm",
+                  textColor: ColorTheme.white,
+                ),
+            ),
           ],
         ),
       ),

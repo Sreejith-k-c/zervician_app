@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/color/color_constants.dart';
+import '../../../global_widget/global_appbar.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key});
@@ -34,22 +35,15 @@ class _ChangePasswordState extends State<ChangePassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: GLAppBar(
+        title: "Change Password",
         centerTitle: true,
-        title: Text(
-          "Change Password",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.chevron_left_rounded,
-              color: ColorTheme.mainClr, size: 30),
-        ),
-        actions: [
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.chevron_left_rounded)),
+              actions: [
           IconButton(
             onPressed: () {},
             icon: Icon(
